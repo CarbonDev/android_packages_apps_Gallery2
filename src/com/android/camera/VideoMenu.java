@@ -58,6 +58,11 @@ public class VideoMenu extends PieController
             item = makeSwitchItem(CameraSettings.KEY_SMART_CAPTURE_VIDEO, true);
             mRenderer.addItem(item);
         }
+        // hdr
+        if (group.findPreference(CameraSettings.KEY_VIDEO_HDR) != null) {
+            item = makeSwitchItem(CameraSettings.KEY_VIDEO_HDR, true);
+            mRenderer.addItem(item);
+        }
         // more options
         PieItem more = makeItem(R.drawable.ic_more_options);
         more.setLabel(res.getString(R.string.camera_menu_more_label));
