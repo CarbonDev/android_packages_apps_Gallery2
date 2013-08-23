@@ -1897,8 +1897,13 @@ public class PhotoModule
             if (Util.sendMagicSamsungZSLCommand()) {
                 mCameraDevice.sendMagicSamsungZSLCommand();
             }
+            else if (Util.useHTCCamMode()) {
+		        mParameters.set("zsl", "on");
+            }
+            else {
             // Switch on ZSL mode
             mParameters.set("camera-mode", "1");
+		    }
         }
 
         // Set JPEG quality.
